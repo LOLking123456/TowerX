@@ -24,6 +24,24 @@ local Section1 = Tab2:NewSection("Player-Features")
 local CredSection = Tab1:NewSection("Settings")
 
 
+Section:NewToggle("Auto Teleport Around Spots (AutoFarm)", "AutoFarm", function(Value)
+   a = Value
+        while a do task.wait(1)
+        pcall(function()
+   for i,v in pairs(workspace.Map.Path.Ground:GetDescendants()) do
+                   if v.ClassName == "Part" then 
+wait(2)
+
+ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame * CFrame.new(0,2,0)
+ end
+ end
+
+   end)
+        end
+end)
+
+
+
 Section:NewButton("idk1", "Spawn", function()
 local args = {
     [1] = 2535.8878867070002,

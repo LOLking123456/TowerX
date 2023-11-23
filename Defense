@@ -28,7 +28,7 @@ Section:NewToggle("Auto Teleport Around Spots (AutoFarm)", "AutoFarm", function(
    a = Value
         while a do task.wait(1)
         pcall(function()
-   for i,v in pairs(workspace.Map.Path.Ground:GetDescendants()) do
+   for i,v in pairs(workspace.Map.Path:GetDescendants()) do
                    if v.ClassName == "Part" then 
 wait(2)
 

@@ -1,6 +1,6 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 
-local Window = Library.CreateLib("Bathtub Tower Defense | Legend HandlesYT", "Ocean")
+local Window = Library.CreateLib("Tower Defense X: BETA | Legend HandlesYT", "Ocean")
 
 
 local Tab = Window:NewTab("Main-Features")
@@ -32,7 +32,7 @@ Section:NewToggle("Auto Teleport Around Spots (AutoFarm)", "AutoFarm", function(
                    if v.ClassName == "Part" then 
 wait(2)
 
- game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame * CFrame.new(0,2,0)
+ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame * CFrame.new(0,2,-3)
  end
  end
 
@@ -42,10 +42,46 @@ end)
 
 
 
-Section:NewButton("idk1", "Spawn", function()
+Section:NewButton("Spawn Farm", "Spawn", function()
 local args = {
     [1] = 2535.8878867070002,
-    [2] = "Ranger",
+    [2] = "Farm",
+    [3] = Vector3.new(-79.6430892944336, 10.569417953491211, 263.1639099121094),
+    [4] = 2
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PlaceTower"):InvokeServer(unpack(args))
+
+end)
+
+Section:NewButton("Spawn Warship", "Spawn", function()
+local args = {
+    [1] = 2535.8878867070002,
+    [2] = "Warship",
+    [3] = Vector3.new(-79.6430892944336, 10.569417953491211, 263.1639099121094),
+    [4] = 2
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PlaceTower"):InvokeServer(unpack(args))
+
+end)
+
+Section:NewButton("Spawn Lazer Gunner", "Spawn", function()
+local args = {
+    [1] = 2535.8878867070002,
+    [2] = "Lazer Gunner",
+    [3] = Vector3.new(-79.6430892944336, 10.569417953491211, 263.1639099121094),
+    [4] = 2
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PlaceTower"):InvokeServer(unpack(args))
+
+end)
+
+Section:NewButton("Spawn Mine Layer", "Spawn", function()
+local args = {
+    [1] = 2535.8878867070002,
+    [2] = "Mine Layer",
     [3] = Vector3.new(-79.6430892944336, 10.569417953491211, 263.1639099121094),
     [4] = 2
 }
@@ -55,10 +91,36 @@ game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Place
 end)
 
 
-Section:NewButton("idk1", "Spawn", function()
+Section:NewButton("Spawn Sniper", "Spawn", function()
 local args = {
     [1] = 2535.8878867070002,
-    [2] = "John",
+    [2] = "Sniper",
+    [3] = Vector3.new(-79.6430892944336, 10.569417953491211, 263.1639099121094),
+    [4] = 2
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PlaceTower"):InvokeServer(unpack(args))
+
+end)
+
+
+
+Section:NewButton("Spawn Cyro Blaster", "Spawn", function()
+local args = {
+    [1] = 2535.8878867070002,
+    [2] = "Cyro Blaster",
+    [3] = Vector3.new(-79.6430892944336, 10.569417953491211, 263.1639099121094),
+    [4] = 2
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PlaceTower"):InvokeServer(unpack(args))
+
+end)
+
+Section:NewButton("Spawn Barracks", "Spawn", function()
+local args = {
+    [1] = 2535.8878867070002,
+    [2] = "Barracks",
     [3] = Vector3.new(-79.6430892944336, 10.569417953491211, 263.1639099121094),
     [4] = 2
 }

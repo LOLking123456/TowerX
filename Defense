@@ -152,7 +152,7 @@ game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Redee
 end)
 
 
-Section:NewButton("Free Cash 1", "Free Cash", function()
+Section:NewButton("Free Cash 2", "Free Cash", function()
 local args = {
     [1] = "johnroblox3"
 }
@@ -162,7 +162,7 @@ game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("Redee
 
 end)
 
-Section:NewButton("Free Cash 1", "Free Cash", function()
+Section:NewButton("Free Cash 3", "Free Cash", function()
 local args = {
     [1] = "johnroblox"
 }

@@ -1,0 +1,158 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+
+local Window = Library.CreateLib("Bathtub Tower Defense | Legend HandlesYT", "Ocean")
+
+
+local Tab = Window:NewTab("Main-Features")
+
+
+
+local Tab2 = Window:NewTab("Player-Features")
+
+local Tab1 = Window:NewTab("Settings")
+
+
+
+
+
+local Section = Tab:NewSection("Main-Features")
+
+
+
+local Section1 = Tab2:NewSection("Player-Features")
+
+local CredSection = Tab1:NewSection("Settings")
+
+
+Section:NewButton("Spawn Upgraded Titan Camera Man Position 1", "Spawn", function()
+local args = {
+    [1] = 1673.1702554350002,
+    [2] = "Ranger",
+    [3] = CFrame.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position),
+    [4] = 2
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PlaceTower"):InvokeServer(unpack(args))
+
+end)
+
+Section:NewButton("Free Cash 1", "Free Cash", function()
+local args = {
+    [1] = "johnroblox2"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("RedeemCode"):InvokeServer(unpack(args))
+
+
+end)
+
+
+Section:NewButton("Free Cash 1", "Free Cash", function()
+local args = {
+    [1] = "johnroblox3"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("RedeemCode"):InvokeServer(unpack(args))
+
+
+end)
+
+Section:NewButton("Free Cash 1", "Free Cash", function()
+local args = {
+    [1] = "johnroblox"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Network"):WaitForChild("RedeemCode"):InvokeServer(unpack(args))
+
+
+end)
+
+
+
+Section1:NewToggle("Noclip", "Go Through Things, Use Infinite Jump With it", function(state) -- 500 (MaxValue) | 0 (MinValue)
+local Noclip = nil
+local Clip = nil
+
+function noclip()
+	Clip = false
+	local function Nocl()
+		if Clip == false and game.Players.LocalPlayer.Character ~= nil then
+			for _,v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+				if v:IsA('BasePart') and v.CanCollide and v.Name ~= floatName then
+					v.CanCollide = false
+				end
+			end
+		end
+		wait(0.21) -- basic optimization
+	end
+	Noclip = game:GetService('RunService').Stepped:Connect(Nocl)
+end
+
+function clip()
+	if Noclip then Noclip:Disconnect() end
+	Clip = true
+end
+
+noclip() -- to toggle noclip() and clip()
+end)
+Section1:NewToggle("Free Camera", "Zoom Out", function(state) -- 500 (MaxValue) | 0 (MinValue)
+  local LocalPlayer = game:GetService("Players").LocalPlayer
+		LocalPlayer.CameraMaxZoomDistance = 9e9
+		LocalPlayer.DevCameraOcclusionMode = Enum.DevCameraOcclusionMode.Invisicam
+end)
+
+
+
+Section1:NewSlider("Walkspeed", "Speed", 300, 16, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    getgenv().WalkSpeedValue = (s); --set your desired walkspeed here
+
+local Player = game:service'Players'.LocalPlayer;
+
+Player.Character.Humanoid:GetPropertyChangedSignal'WalkSpeed':Connect(function()
+
+Player.Character.Humanoid.WalkSpeed = getgenv().WalkSpeedValue;
+
+end)
+
+
+Player.Character.Humanoid.WalkSpeed = getgenv().WalkSpeedValue;
+end)
+
+
+Section1:NewToggle("Infinite Jump", "Infinite Jump", function(state)
+
+ if state then
+_G.infinjump = true
+local Player = game:GetService("Players").LocalPlayer
+local Mouse = Player:GetMouse()
+Mouse.KeyDown:connect(function(k)
+if _G.infinjump then
+if k:byte() == 32 then
+Humanoid = game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
+Humanoid:ChangeState("Jumping")
+wait(0.1)
+Humanoid:ChangeState("Seated")
+end
+end
+end)
+local Player = game:GetService("Players").LocalPlayer
+local Mouse = Player:GetMouse()
+    else
+if _G.infinjump == true then
+_G.infinjump = false
+else
+_G.infinjump = true
+end
+end
+            end)
+
+Section1:NewSlider("FOV", "Field Of Views", 120, 70, function(s) -- 500 (MaxValue) | 0 (MinValue)
+game:GetService'Workspace'.Camera.FieldOfView = (s)
+end)
+
+CredSection:NewLabel("Made By Legend HandlesYT")
+
+
+CredSection:NewKeybind("Toggle UI", "Toggle The UI", Enum.KeyCode.L, function()
+	Library:ToggleUI()
+end)

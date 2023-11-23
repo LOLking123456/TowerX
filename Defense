@@ -41,6 +41,18 @@ wait(2)
 end)
 
 
+Section:NewButton("Spawn Ranger", "Spawn", function()
+local args = {
+    [1] = 2535.8878867070002,
+    [2] = "Ranger",
+    [3] = Vector3.new(-79.6430892944336, 10.569417953491211, 263.1639099121094),
+    [4] = 2
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("PlaceTower"):InvokeServer(unpack(args))
+
+end)
+
 
 Section:NewButton("Spawn Farm", "Spawn", function()
 local args = {

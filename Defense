@@ -24,11 +24,11 @@ local Section1 = Tab2:NewSection("Player-Features")
 local CredSection = Tab1:NewSection("Settings")
 
 
-Section:NewButton("Spawn Upgraded Titan Camera Man Position 1", "Spawn", function()
+Section:NewButton("idk", "Spawn", function()
 local args = {
-    [1] = 1673.1702554350002,
-    [2] = "Ranger",
-    [3] = CFrame.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position),
+    [1] = 2535.8878867070002,
+    [2] = "Warship",
+    [3] = Vector3.new(-79.6430892944336, 10.569417953491211, 263.1639099121094),
     [4] = 2
 }
 

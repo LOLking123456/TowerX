@@ -24,10 +24,10 @@ local Section1 = Tab2:NewSection("Player-Features")
 local CredSection = Tab1:NewSection("Settings")
 
 
-Section:NewButton("idk", "Spawn", function()
+Section:NewButton("idk1", "Spawn", function()
 local args = {
     [1] = 2535.8878867070002,
-    [2] = "Warship",
+    [2] = "Ranger",
     [3] = Vector3.new(-79.6430892944336, 10.569417953491211, 263.1639099121094),
     [4] = 2
 }
